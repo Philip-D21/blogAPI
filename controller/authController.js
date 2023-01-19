@@ -56,27 +56,11 @@ const login = async(req,res) =>{
 };
 
 
-const profile = async(req,res)=>{
-    console.log(req.user);
-    res.status(StatusCodes.OK).json({
-   message:"Welcome to your profile"})
-}
 
-const logout = async(req,res)=> {
-     res.cookie("token","logout",{
-        httpOnly:true,
-        expires: new Date(Date.now() + 1000 )
-     });
-     res.status(StatusCodes.OK).json({ message:"user logged out" }); 
-
-};
 
 
 
 module.exports = {
     signup,
     login,
-    profile,
-    logout,
-    
 }

@@ -1,29 +1,33 @@
 const mongoose = require("mongoose");
-
+const User = require("../model/user");
 
 const blogSchema = new mongoose.Schema({
     title :{
         type: String,
         required: true,
+        unique: true,
     },
     description: {
         type:String,
         required: true,
     },
     author: {
-        type: String,
-        required: true,
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
+        required: true
     },
     state: {
         type: String,
-        required: true,
+        enum: ["draft", "published"],
+        default: "draft"
     },
     read_count:{
-        type: String,
-        required: true,
+        type: Number,
+        default: 0,
+        min: 0,
     },
     reading_time: {
-        type: String,
+        type: Number,
         required: true,
     },
     tags:{
@@ -34,9 +38,18 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-},
-{timestamps: true},
-)
+    timestamp:{
+        type: Date,
+        default: Date.now,
+        imutable: true
+    },
+    last_modified:{
+        type: Date,
+        default: Date.now,
+    }
+})
+
+blogSchema.index({ tags: 1});
 
 
 
