@@ -11,6 +11,6 @@ services:
       - '8000'
     ports:
       - '8000:8000'
-    volumes:
-      - ./blogging-api-main:/home/node/app
+    # volumes:
+    #   - ./blogging-api-main:/home/node/app
     command: npm run dev
