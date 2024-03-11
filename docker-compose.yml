@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: blog-docker
+    expose:
+      - '8000'
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./blogging-api-main:/home/node/app
+    command: npm run dev

@@ -1,0 +1,41 @@
+{
+  "name": "blogging-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drvnprgrmr/blogging-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drvnprgrmr/blogging-api/issues"
+  },
+  "homepage": "https://github.com/drvnprgrmr/blogging-api#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bootstrap": "^5.2.2",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.12.7",
+    "morgan": "^1.10.0",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^8.9.5",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.1"
+  }
+}
